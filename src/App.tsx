@@ -1,14 +1,19 @@
-import TodoListItem from "./TodoListItem"
+import { useState } from 'react'
+import TodoList from "./TodoList"
 
 
-const todos: Array<Todo> = [
+const initialTodos: Array<Todo> = [
+  {text: 'learn basic typescript', complete: true},
+  {text: 'learn basic typescript', complete: true},
   {text: 'learn basic typescript', complete: true}
 ]
 
 const App: React.FC = () => {
+  const [todos, setTodos] = useState(initialTodos)
+  
   return (
     <div>
-      <TodoListItem todo={todos[0]}/>
+      <TodoList todos={todos}/>
     </div>
   )
 }
