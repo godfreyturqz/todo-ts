@@ -13,11 +13,22 @@ const App: React.FC = () => {
   const addTodo: AddTodo = (newTodo) => {
     setTodos([...todos, {text: newTodo, complete: false}])
   }
-  
+
+  const toggleTodo: ToggleTodo = (selectedTodo) => {
+    const newTodos = todos.map(todo => {
+      if(todo !== selectedTodo) return todo
+      return {
+        ...todo,
+        complete: !todo.complete
+      }
+    })
+    setTodos(newTodos)
+  }
+
   return (
     <div>
-      <TodoList todos={todos}/>
       <AddTodoForm addTodo={addTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo}/>
     </div>
   )
 }
