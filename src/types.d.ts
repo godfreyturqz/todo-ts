@@ -6,3 +6,4 @@ type Todo = {
 type AddTodo = (newTodo: string) => void
 
 type ToggleTodo = (selectedTodo: Todo) => void
+type DeleteTodo = (selectedTodo: Todo) => void

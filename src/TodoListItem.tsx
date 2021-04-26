@@ -1,9 +1,10 @@
 interface TodoListItemProps {
     todo: Todo
     toggleTodo: ToggleTodo
+    deleteTodo: DeleteTodo
 }
 
-const TodoListItem: React.FC<TodoListItemProps> = ({todo, toggleTodo}) => {
+const TodoListItem: React.FC<TodoListItemProps> = ({todo, toggleTodo, deleteTodo}) => {
     
     return (
         <li style={{display: 'flex'}}>
@@ -14,7 +15,7 @@ const TodoListItem: React.FC<TodoListItemProps> = ({todo, toggleTodo}) => {
                 </label>
             </div>
             <div style={{width: '100%'}}>
-                <button>Delete</button>
+                <button onClick={() => deleteTodo(todo)}>Delete</button>
             </div>
         </li>
     )

@@ -25,10 +25,16 @@ const App: React.FC = () => {
     setTodos(newTodos)
   }
 
+  const deleteTodo: ToggleTodo = (selectedTodo) => {
+    const newTodos = todos.filter(todo => todo !== selectedTodo)
+    setTodos(newTodos)
+  }
+  
+
   return (
     <div>
       <AddTodoForm addTodo={addTodo}/>
-      <TodoList todos={todos} toggleTodo={toggleTodo}/>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     </div>
   )
 }
