@@ -1,6 +1,11 @@
 import { useState, ChangeEvent, FormEvent } from 'react'
 
-interface AddTodoFormProps {
+// can either choose 'interface' or 'type'
+// interface AddTodoFormProps {
+//     addTodo: AddTodo
+// }
+
+type AddTodoFormProps = {
     addTodo: AddTodo
 }
 
