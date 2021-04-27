@@ -25,10 +25,12 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" value={newTodo} onChange={handleChange}/>
-            <button>Add todo</button>
-        </form>
+        <div className='d-flex justify-content-center form-group'>
+            <form className='' onSubmit={handleSubmit}>
+                <input type="text" value={newTodo} onChange={handleChange}/>
+                <button className='btn btn-primary shadow-none'>Add todo</button>
+            </form>
+        </div>
     )
 }
 

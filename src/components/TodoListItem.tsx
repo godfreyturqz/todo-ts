@@ -7,7 +7,7 @@ interface TodoListItemProps {
 const TodoListItem: React.FC<TodoListItemProps> = ({todo, toggleTodo, deleteTodo}) => {
     
     return (
-        <li style={{display: 'flex'}}>
+        <li className='m-3' style={{display: 'flex'}}>
             <div style={{width: '100%'}}>
                 <label style={{textDecoration: todo.complete ? 'line-through' : 'none'}}>
                     <input type="checkbox" checked={todo.complete} onChange={() => toggleTodo(todo)}/>
@@ -15,7 +15,7 @@ const TodoListItem: React.FC<TodoListItemProps> = ({todo, toggleTodo, deleteTodo
                 </label>
             </div>
             <div style={{width: '100%'}}>
-                <button onClick={() => deleteTodo(todo)}>Delete</button>
+                <button className='btn btn-danger shadow-none' onClick={() => deleteTodo(todo)}>Delete</button>
             </div>
         </li>
     )
