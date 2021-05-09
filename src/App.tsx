@@ -11,26 +11,23 @@ const App: React.FC = () => {
 
   const [todos, setTodos] = useState<Todo[]>([])
 
-  // declaring types for functions
+  // This is how to declare types on functions
   const addTodo: AddTodo = (newTodo) => {
-    setTodos([...todos, {text: newTodo, complete: false}])
+    setTodos([...todos, newTodo])
   }
 
-  // declaring types for functions
+  // This is how to declare types on functions
   const toggleTodo: ToggleTodo = (selectedTodo) => {
     const newTodos = todos.map(todo => {
-      if(todo !== selectedTodo) return todo
-      return {
-        ...todo,
-        complete: !todo.complete
-      }
+      if(todo.id === selectedTodo.id) return {...todo, complete: !todo.complete}
+      return todo
     })
     setTodos(newTodos)
   }
 
-  // can also just declare types on function parameters
+  // This is how to declare types on functions in a different way
   const deleteTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.filter(todo => todo !== selectedTodo)
+    const newTodos = todos.filter(todo => todo.id !== selectedTodo.id)
     setTodos(newTodos)
   }
   
