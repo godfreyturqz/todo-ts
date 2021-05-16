@@ -30,7 +30,7 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
-        if (!newTodo) return
+        if (!newTodo.text && !newTodo.id) return
         addTodo(newTodo)
         setNewTodo(initialState)
     }
