@@ -20,7 +20,7 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
 
     const [newTodo, setNewTodo] = useState<Todo>(initialState)
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         setNewTodo({
             id: v4(),
             text: e.target.value,
@@ -28,7 +28,7 @@ const AddTodoForm: React.FC<AddTodoFormProps> = ({addTodo}) => {
         })
     }
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
         if (!newTodo) return
         addTodo(newTodo)

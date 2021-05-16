@@ -5,10 +5,6 @@ import TodoList from "./components/TodoList"
 
 const App: React.FC = () => {
 
-  // const initialTodos: Array<Todo> = [
-  //   {text: 'learn basic typescript', complete: true},
-  // ]
-
   const [todos, setTodos] = useState<Todo[]>([])
 
   // This is how to declare types on functions
@@ -25,8 +21,8 @@ const App: React.FC = () => {
     setTodos(newTodos)
   }
 
-  // This is how to declare types on functions in a different way
-  const deleteTodo = (selectedTodo: Todo) => {
+  // Another way of declaring types on functions
+  const deleteTodo = (selectedTodo: Todo): void => {
     const newTodos = todos.filter(todo => todo.id !== selectedTodo.id)
     setTodos(newTodos)
   }
